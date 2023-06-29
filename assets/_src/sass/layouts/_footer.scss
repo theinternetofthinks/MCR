@@ -1,0 +1,220 @@
+@use '../global' as *;
+
+.open-map {
+	.map-wrapper {
+		min-width: 50vw !important;
+	} 
+}  
+
+.logo-linkedin {
+	max-width: 30px;
+}
+
+.modal-body {
+	h2,
+	p {
+		font-family: 'Poppins', sans-serif !important;
+	}
+}
+
+.up-top {
+	background: none;
+	background: #fff;
+	border: 0;
+	border-radius: 50%;
+	bottom: 15px;
+	display: block;
+	height: 40px;
+	opacity: 0;
+	position: fixed;
+	right: 15px;
+	transition: all 0.4s linear;
+	width: 40px;
+
+	&.visible {
+		opacity: 1;
+	}
+
+	&::before,
+	&::after {
+		background: #22b9d8;
+		border-radius: 4px;
+		content: '';
+		display: block;
+		height: 3px;
+		left: 8px;
+		position: absolute;
+		top: 17px;
+		transform: rotate(-45deg);
+		width: 15px;
+	}
+
+	&::before {
+		left: inherit;
+		right: 8px;
+		transform: rotate(45deg);
+
+	}
+}
+
+body:not([data-style='primary']) {
+	footer {
+		background: #023b59;
+
+		.list-sites li a {
+			color: #fff !important;
+		}
+
+		span,
+		a,
+		h2 {
+			color: #fff;
+		}
+
+	}
+
+	.footer-end {
+		background: #fff;
+
+		span,
+		a {
+			color: #22b9d8;
+		}
+	}
+}
+
+.footer {
+
+	color: $color-primary-dark;
+	font-family: 'IBM Plex Sans', sans-serif !important;
+	font-size: 0.8rem;
+
+	.block-footer-info {
+		font-size: 20px;
+		padding-bottom: 70px;
+		padding-top: 140px;
+		@media (max-width: 768px) {
+			padding-bottom: 20px;
+			padding-top: 40px;
+		}
+	
+		a,
+		span {
+			display: block;
+			text-decoration: none;
+		}
+
+		h2 {
+			font-size: 20px;
+			margin-bottom: 30px;
+
+			strong {
+				color: #22b9d8 !important;
+				display: block;
+			}
+		}
+	}
+
+	.footer-end {
+		background: #023b59;
+		color: #fff;
+		display: flex;
+		font-size: 15px;
+		justify-content: space-between;
+		padding: 20px;
+
+		ul {
+			margin-bottom: 0;
+		}
+
+		li {
+			display: inline-block;
+			margin: 0 15px;
+		}
+
+		a {
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+
+	a {
+		color: $color-primary-dark;
+	}
+
+
+
+	.copyright {
+		font-size: 0.8rem !important;		
+
+	}
+
+	.list-sites {
+		border-bottom: 0;
+
+		li {
+			padding-bottom: 0;
+
+		}
+	}
+}
+
+.list-sites {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 70px !important;
+	@media (max-width: 768px) { 
+		flex-wrap: wrap;
+
+	}
+
+	li {
+		list-style: none;
+		margin: 0 25px;
+		padding-bottom: 40px;
+		position: relative;
+		@media (max-width: 768px) {
+			padding-left: 30px;
+			width: 100%;
+
+			&::before {
+				left: 0;
+				right: auto;
+			}
+		}
+
+		&::before {
+			background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDM5OS41NSA0MjUuNjkiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMWRiOWQ4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0zOTkuNTMsMjY5LjU4Yy0xNi40OSwzMS42LTMyLjcyLDYyLjcxLTQ5LjE0LDk0LjE5LTQwLjU5LTM0LjQxLTgwLjc4LTY4LjQ4LTEyMS43NC0xMDMuMjEsNy44Nyw1NS41NywxNS41OSwxMTAuMTMsMjMuMzgsMTY1LjE0aC05OS4xOWM3LjAyLTU0LjU4LDE0LjAyLTEwOC45OCwyMS4wMS0xNjMuMzgtLjM0LS4yMy0uNjgtLjQ1LTEuMDEtLjY4LTQwLjM5LDM0LjY5LTgwLjc5LDY5LjM4LTEyMS41NiwxMDQuNC0xNy4xNi0zMi4yNy0zNC4wOS02NC4xMS01MS4yOS05Ni40Niw0OC4zNy0xOS4yOCw5Ni4yMy0zOC4zNiwxNDUuMjEtNTcuODgtNDguNjUtMTkuMTUtOTYuMTQtMzcuODUtMTQ0LjEzLTU2Ljc0LDE2LjA3LTMwLjcxLDMxLjg3LTYwLjkzLDQ4LjA3LTkxLjksNDEuNDMsMzMuODMsODIuNTIsNjcuMzksMTIzLjYxLDEwMC45NC4zNy0uMTguNzQtLjM2LDEuMTEtLjU0LTcuMzQtNTQuMzQtMTQuNjgtMTA4LjY3LTIyLjA4LTE2My40NWgxMDAuMjRjLTcuNzYsNTQuNzktMTUuNDksMTA5LjQxLTIzLjM3LDE2NS4wOSw0MS4xMy0zMy44LDgxLjYyLTY3LjA3LDEyMi43OC0xMDAuODksMTYuMDcsMzAuMzIsMzEuOTUsNjAuMjYsNDguMTEsOTAuNzUtNDguNDQsMTkuMTctOTYuNjcsMzguMjUtMTQ2LjI4LDU3Ljg4LDQ5LjQ2LDE5LjE5LDk3LjY0LDM3Ljg4LDE0Ni4yNiw1Ni43NVoiLz48L3N2Zz4=');
+			background-repeat: no-repeat;
+			background-size: contain;
+			content: '';
+			display: block;
+			height: 15px;
+			position: absolute;
+			right: -35px;
+			top: 5px;
+			width: 15px;
+		}
+		@media (min-width: 992px) {
+			&:last-child {
+				&::before {
+					display: none;
+				}
+			}
+		}
+
+		a {
+			color: #023b59 !important;
+			display: inline-block;
+			font-family: 'IBM Plex Sans',sans-serif !important;
+			font-size: 17px;
+			text-decoration: none;
+
+			&:hover {
+				color: #22b9d8 !important;
+			}
+		}
+
+	}
+}
