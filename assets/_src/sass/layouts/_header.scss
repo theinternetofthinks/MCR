@@ -172,7 +172,7 @@ body.menu-opened {
 
 	.home & {
 		&::before {
-			background: url('../images/icon-world-primary.svg');
+			background: url('../images/icon-world.svg');
 		}
 	}
 
@@ -186,6 +186,9 @@ body.menu-opened {
 		position: absolute;
 		top: 2px;
 		width: 20px;
+		@media (min-width: 1199px) {
+			top: 5px;
+		} 
 	}
 
 
@@ -756,6 +759,11 @@ header {
 [data-style='primary'] {
 	header {
 		background: #023b59;
+
+		&.show-submenu {
+			background: #023b59;
+
+		}
 	}
 
 	.current_page_item {
